@@ -4,7 +4,7 @@
 
 # Creation and training of the GAN's 
 
-* Part 1 : Creating the two networks 
+### Part 1 : Creating the two networks 
 
 ```
 # Defining the generator- Deconvolutional Network 
@@ -78,7 +78,7 @@ class D(nn.Model):
 	netD.apply(weight_init)
 ```
 
-* Part 2 : Training the DCGANS 
+## Part 2 : Training the DCGANS 
 
 ```
 criterion=nn.BCELoss()
