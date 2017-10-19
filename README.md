@@ -6,7 +6,7 @@
 
 ### Part 1 : Creating the DCGAN 
 
-```
+```torch
 # Defining the generator- Deconvolutional Network 
 
 class G(nn.Model): 
@@ -80,7 +80,7 @@ class D(nn.Model):
 
 ## Part 2 : Training the DCGANS 
 
-```
+```torch
 criterion=nn.BCELoss()
 optimizerD=optimi.Adam(netD.parameters(),lr=0.0002, betas=(0.5,0.9999))
 optimizerG=optimi.Adam(netG.parameters(),lr=0.0002, betas=(0.5,0.9999))
