@@ -97,7 +97,8 @@ for epoch in range (25) : # 25 epochs
 	real,_=data # (image,label so real (image) is the first element, _ ~no need of label)
 	input=Variable(real) # torch Variable 
 	target= Variable(torch.ones(input.size()[0]))
-	# torch.ones : target is full of "one" because we need to tell the discriminator that the image are real.
+	# torch.ones : target is full of "one" because we need to tell the discriminator 
+	#that the image are real.
 	# the target need to have the input.size
 	output=netD(input)
 	errD_real = criterion(output,target)
@@ -107,7 +108,8 @@ for epoch in range (25) : # 25 epochs
 	noise=Variable(torch.randn(input.size()[0],100,1,1))
 	fake=netC(noise) # generation of the fake images and update of the gradients
 	target= Variable(torch.zeros(input.size()[0])) 
-	# torch.zeros : target is full "zero" because we need to tell the discriminator that the images generated are fake
+	# torch.zeros : target is full "zero" because we need to tell the discriminator 
+	#that the images generated are fake
 	output=netD(fake.detach()) # detach ~don't care the gradients. 
 	errD_fake = criterion(output,target)
 
