@@ -4,9 +4,9 @@
 
 # Creation and training of the GAN's 
 
-```
-Part 1 : Creating the two networks 
+* Part 1 : Creating the two networks 
 
+```
 # Defining the generator- Deconvolutional Network 
 
 class G(nn.Model): 
@@ -76,9 +76,11 @@ class D(nn.Model):
 	#Creating the discriminator : create an object and weight initialization. 
 	netD=D()
 	netD.apply(weight_init)
+```
 
+* Part 2 : Training the DCGANS 
 
-Part 2 : Training the DCGANS 
+```
 criterion=nn.BCELoss()
 optimizerD=optimi.Adam(netD.parameters(),lr=0.0002, betas=(0.5,0.9999))
 optimizerG=optimi.Adam(netG.parameters(),lr=0.0002, betas=(0.5,0.9999))
@@ -127,5 +129,4 @@ for epoch in range (25) : # 25 epochs
 	errG= criterion(output,target)
 	errG.backward()
 	optimizerG.step()
-  
   ```
