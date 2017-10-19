@@ -6,7 +6,7 @@
 
 ### Part 1 : Creating the DCGAN 
 
-```pytorch
+```python
 # Defining the generator- Deconvolutional Network 
 
 class G(nn.Model): 
