@@ -2,9 +2,9 @@
 * Section 3 GAN's Computer Vision A-Z™: https://www.udemy.com/computer-vision-a-z/learn/v4/t/lecture/8138282?start=0
 
 
-# Creation and training of the GAN's 
+# Creation and training of a DCGAN 
 
-### Part 1 : Creating the two networks 
+### Part 1 : Creating the DCGAN 
 
 ```
 # Defining the generator- Deconvolutional Network 
@@ -124,7 +124,8 @@ for epoch in range (25) : # 25 epochs
 	# 2nd step : updating the weights of the generator 
 
 	netG.zero_grad() 
-	target= Variable(torch.ones(input.size()[0])) # torch.ones force the generator to create real image 
+	target= Variable(torch.ones(input.size()[0])) 
+	# torch.ones force the generator to create real image 
 	output=netD(fake) # this time we keep the gradients 
 	errG= criterion(output,target)
 	errG.backward()
